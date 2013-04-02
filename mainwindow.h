@@ -22,7 +22,7 @@ public:
 
 private slots:
     void handleButton();
-   
+    void handle m_boutton1();
 
 
 private :

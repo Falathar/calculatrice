@@ -1,4 +1,4 @@
-#include "mainwindows.h"
+#include "mainwindow.h"
 #include <QCoreApplication>
 #include <QPushButton>
  #include <QLabel>
