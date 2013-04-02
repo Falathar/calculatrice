@@ -7,11 +7,7 @@
 
 class MainWindow : public QMainWindow
 {
-
-
-
     Q_OBJECT
-
 
 public:
 
@@ -22,24 +18,27 @@ public:
 
 private slots:
     void handleButton();
-    void handle m_boutton1();
+    //void handle_m_boutton1();
 
 
 private :
-    QPushButton *m_button;
+    QPushButton *m_boutton;
     QLabel *m_screen;
-    QPushButton*m_bouton;
-    QPushButton*m_boutton;
-    QPushButton*m_boutton3;
-     QPushButton*m_boutton4;
-      QPushButton*m_boutton1;
-       QPushButton*m_boutton5;
-        QPushButton*m_boutton6;
-         QPushButton*m_boutton7;
-          QPushButton*m_boutton8;
-           QPushButton*m_boutton9;
-             QPushButton*m_boutton0;
 
+    QPushButton *m_boutton1;
+    QPushButton *m_boutton2;
+    QPushButton *m_boutton3;
+    QPushButton *m_boutton4;
+    QPushButton *m_boutton5;
+    QPushButton *m_boutton6;
+    QPushButton *m_boutton7;
+    QPushButton *m_boutton8;
+    QPushButton *m_boutton9;
+    QPushButton *m_boutton0;
+
+    // constants:
+    const int  SCREEN_HEIGHT = 100;
+    const int  SCREEN_WEIGHT = 100;
 
 };
 
