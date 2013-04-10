@@ -31,7 +31,7 @@ private slots:
     void handle_m_boutton8();
     void handle_m_boutton9();
     void handle_m_plus();
-    void handle_m_moin();
+    void handle_m_moins();
     void handle_m_diviser();
 
 
@@ -41,7 +41,7 @@ private slots:
 private :
     QPushButton *m_boutton;
     QLabel *m_screen;
-     QPushButton *m_boutton0;
+    QPushButton *m_boutton0;
 
     QPushButton *m_boutton1;
     QPushButton *m_boutton2;
@@ -53,7 +53,7 @@ private :
     QPushButton *m_boutton8;
     QPushButton *m_boutton9;
     QPushButton *m_plus;
-    QPushButton *m_moin;
+    QPushButton *m_moins;
     QPushButton *m_diviser;
 
 

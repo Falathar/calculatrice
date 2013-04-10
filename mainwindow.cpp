@@ -6,12 +6,12 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
 {
     //creation fenetre
-this->setFixedSize(700,500);
+    this->setFixedSize(700,500);
 
 
     // Create the button, make "this" the parent
     m_boutton = new QPushButton ("quitter", this);
-      m_boutton->setToolTip("quitter l'application");
+    m_boutton->setToolTip("quitter l'application");
     m_boutton0 = new QPushButton("0",this);
     m_boutton1 = new QPushButton("1",this);
     m_boutton2 = new QPushButton("2",this);
@@ -25,16 +25,16 @@ this->setFixedSize(700,500);
 
 
     // signe de calcul
-        m_plus = new QPushButton("+",this);
-        m_plus->setCursor(Qt::PointingHandCursor);
-        m_plus->setFont(QFont("Arial"));
-        m_plus->setToolTip("+");
-        m_moin = new QPushButton("-",this);
-        m_moin->setCursor(Qt::PointingHandCursor);
-        m_moin->setToolTip("-");
-        m_diviser = new QPushButton("÷",this);
-        m_diviser->setCursor(Qt::PointingHandCursor);
-        m_diviser->setToolTip("+");
+    m_plus = new QPushButton("+",this);
+    m_plus->setCursor(Qt::PointingHandCursor);
+    m_plus->setFont(QFont("Arial"));
+    m_plus->setToolTip("+");
+    m_moins = new QPushButton("-",this);
+    m_moins->setCursor(Qt::PointingHandCursor);
+    m_moins->setToolTip("-");
+    m_diviser = new QPushButton("÷",this);
+    m_diviser->setCursor(Qt::PointingHandCursor);
+    m_diviser->setToolTip("+");
 
 
 
@@ -42,7 +42,7 @@ this->setFixedSize(700,500);
 
     // set size and location of the button
     m_boutton->setGeometry(QRect(QPoint(100, 450),
-                                QSize(200, 50)));     //valeur = Mybutton
+                                 QSize(200, 50)));     //valeur = Mybutton
 
     m_boutton0->setGeometry(QRect(QPoint(100, 350),    // valeur 1
                                   QSize(200, 50)));
@@ -52,7 +52,7 @@ this->setFixedSize(700,500);
 
 
     m_boutton2->setGeometry(QRect(QPoint(300, 300),
-                                QSize(200, 50)));     // valeur=2
+                                  QSize(200, 50)));     // valeur=2
 
     m_boutton3->setGeometry(QRect(QPoint(500, 300),
                                   QSize(200, 50)));    // valeur 3
@@ -76,12 +76,12 @@ this->setFixedSize(700,500);
                                   QSize(200, 50)));  // valeur 9
 
     m_plus->setGeometry(QRect(QPoint(300, 350),
-                                  QSize(200, 50)));  // valeur 9
+                              QSize(200, 50)));  // valeur 9
 
-    m_moin->setGeometry(QRect(QPoint(500, 350),
-                                  QSize(200, 50)));  // valeur 9
+    m_moins->setGeometry(QRect(QPoint(500, 350),
+                              QSize(200, 50)));  // valeur 9
     m_diviser->setGeometry(QRect(QPoint(500, 400),
-                                  QSize(200, 50)));  // valeur 9
+                                 QSize(200, 50)));  // valeur 9
 
 
 
@@ -98,7 +98,7 @@ this->setFixedSize(700,500);
     connect(m_boutton7, SIGNAL(released()), this, SLOT(handle_m_boutton7()));
     connect(m_boutton8, SIGNAL(released()), this, SLOT(handle_m_boutton8()));
     connect(m_boutton9, SIGNAL(released()), this, SLOT(handle_m_boutton9()));
-    connect(m_moin, SIGNAL(released()), this, SLOT(handle_m_moin()));
+    connect(m_moins, SIGNAL(released()), this, SLOT(handle_m_moins()));
     connect(m_plus, SIGNAL(released()), this, SLOT(handle_m_plus()));
     connect(m_diviser, SIGNAL(released()), this, SLOT(handle_m_diviser()));
     QObject::connect(m_boutton, SIGNAL(clicked()), qApp, SLOT(quit()));
@@ -249,13 +249,13 @@ void MainWindow::handle_m_plus()                    // boutton 1
     m_screen->setText("+");
 }
 
-void MainWindow::handle_m_moin()                    // boutton 1
+void MainWindow::handle_m_moins()                    // boutton 1
 {
     // change the text
-    m_moin->setText("-");
+    m_moins->setText("-");
 
     // resize button
-    m_moin->resize(200,50);
+    m_moins->resize(200,50);
     m_screen->setText("-");
 }
 
