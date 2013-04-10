@@ -6,7 +6,7 @@
 #include <QLabel>
 #include <QColor>
 #include <QColor>
-
+#include <QLCDNumber>
 
 class MainWindow : public QMainWindow
 {
@@ -19,28 +19,22 @@ public:
 
     ~MainWindow();
 
+
 private slots:
-    void handleButton();
-    void handle_m_boutton1();
-    void handle_m_boutton2();
-    void handle_m_boutton3();
-    void handle_m_boutton4();
-    void handle_m_boutton5();
-    void handle_m_boutton6();
-    void handle_m_boutton7();
-    void handle_m_boutton8();
-    void handle_m_boutton9();
-    void handle_m_plus();
-    void handle_m_moins();
-    void handle_m_diviser();
-
-
-
-
+    void handle_m_boutton();
 
 private :
+
+    QString buffer1;
+    QString buffer2;
+    QString bufferop;
+
+    QList<QPushButton*> listButtons;
+
+    QList<QLabel*> listLabel;
+
     QPushButton *m_boutton;
-    QLabel *m_screen;
+    QLCDNumber *m_screen;
     QPushButton *m_boutton0;
 
     QPushButton *m_boutton1;
@@ -56,17 +50,12 @@ private :
     QPushButton *m_moins;
     QPushButton *m_diviser;
 
-
-
-
+    //
+    bool isOperator(QString);
 
     // constants:
     const int  SCREEN_HEIGHT = 50;
     const int  SCREEN_WEIGHT = 450;
-
-
-
-
 };
 
 #endif // MAINWINDOW_H
