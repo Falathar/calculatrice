@@ -49,6 +49,7 @@ private :
     QPushButton *m_plus;
     QPushButton *m_moins;
     QPushButton *m_diviser;
+    QPushButton *m_egal;
 
     //
     bool isOperator(QString);

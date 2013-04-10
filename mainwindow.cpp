@@ -40,6 +40,8 @@ MainWindow::MainWindow(QWidget *parent)
     m_diviser->setCursor(Qt::PointingHandCursor);
     m_diviser->setToolTip("+");
 
+    m_egal=new QPushButton("=",this);
+    m_egal->setToolTip("=");
     // set size and location of the button
     m_boutton->setGeometry(QRect(QPoint(100, 450),
                                  QSize(200, 50)));     //valeur = Mybutton
@@ -82,13 +84,15 @@ MainWindow::MainWindow(QWidget *parent)
     m_diviser->setGeometry(QRect(QPoint(500, 400),
                                  QSize(200, 50)));  // valeur 9
 
-
+    m_egal->setGeometry(QRect(QPoint(300, 400),
+                                 QSize(200, 50)));  // valeur 9
 
 
     // Connect button signal to appropriate slot
     connect(m_moins, SIGNAL(clicked()), this, SLOT(handle_m_boutton()));
     connect(m_plus, SIGNAL(clicked()), this, SLOT(handle_m_boutton()));
     connect(m_diviser, SIGNAL(clicked()), this, SLOT(handle_m_boutton()));
+    connect(m_egal, SIGNAL(clicked()), this, SLOT(handle_m_boutton()));
     QObject::connect(m_boutton, SIGNAL(clicked()), qApp, SLOT(quit()));
 
     m_screen = new QLCDNumber(this);
