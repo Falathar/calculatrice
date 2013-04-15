@@ -56,7 +56,7 @@ private :
 
     // constants:
     const int  SCREEN_HEIGHT = 50;
-    const int  SCREEN_WEIGHT = 450;
+    const int  SCREEN_WEIGHT = 550;
 };
 
 #endif // MAINWINDOW_H
