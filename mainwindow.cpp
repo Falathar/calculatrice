@@ -42,9 +42,11 @@ MainWindow::MainWindow(QWidget *parent)
     m_diviser->setCursor(Qt::PointingHandCursor);
     m_diviser->setToolTip("+");
     m_plus->setStyleSheet ("QPushButton {background : }");
-    setStyleSheet("background-color: grey;");
+    setStyleSheet("background-color: silver;");
     m_retour= new QPushButton("c",this);
      m_retour->setCursor(Qt::PointingHandCursor);
+     m_multiplier= new QPushButton("*",this);
+      m_multiplier->setCursor(Qt::PointingHandCursor);
 
 
 
@@ -103,6 +105,8 @@ MainWindow::MainWindow(QWidget *parent)
                                  QSize(200, 50)));  // valeur 9
     m_retour->setGeometry(QRect(QPoint(10, 400),
                                  QSize(300, 50)));  // valeur 9
+    m_multiplier->setGeometry(QRect(QPoint(610, 150),
+                                 QSize(90, 50)));  // valeur 9
 
 
 
@@ -111,6 +115,8 @@ MainWindow::MainWindow(QWidget *parent)
     connect(m_plus, SIGNAL(clicked()), this, SLOT(handle_m_boutton()));
     connect(m_diviser, SIGNAL(clicked()), this, SLOT(handle_m_boutton()));
     connect(m_egal, SIGNAL(clicked()), this, SLOT(handle_m_boutton()));
+    connect(m_multiplier, SIGNAL(clicked()), this, SLOT(handle_m_boutton()));
+
 
     QObject::connect(m_boutton, SIGNAL(clicked()), qApp, SLOT(quit()));
 
@@ -118,9 +124,10 @@ MainWindow::MainWindow(QWidget *parent)
 
     m_screen = new QLCDNumber(this);
     m_screen->setFrameStyle(QFrame::Panel | QFrame::Sunken);
-    m_screen->display("hello");
+    m_screen->display("HeLlO");
     //m_screen->setAlignment(Qt::AlignBottom | Qt::AlignRight);
     m_screen->resize(SCREEN_WEIGHT,SCREEN_HEIGHT);
+
 
 
 
@@ -140,6 +147,8 @@ void MainWindow::handle_m_boutton()
     bool ok;
     float fbuffer1 = buffer1.toFloat(&ok);
     float fbuffer2 = buffer2.toFloat(&ok);
+
+
 
 
 
