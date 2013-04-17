@@ -43,6 +43,8 @@ MainWindow::MainWindow(QWidget *parent)
     m_diviser->setToolTip("+");
     m_plus->setStyleSheet ("QPushButton {background : }");
     setStyleSheet("background-color: grey;");
+    m_retour= new QPushButton("c",this);
+     m_retour->setCursor(Qt::PointingHandCursor);
 
 
 
@@ -99,6 +101,9 @@ MainWindow::MainWindow(QWidget *parent)
 
     m_egal->setGeometry(QRect(QPoint(410, 350),
                                  QSize(200, 50)));  // valeur 9
+    m_retour->setGeometry(QRect(QPoint(10, 400),
+                                 QSize(300, 50)));  // valeur 9
+
 
 
     // Connect button signal to appropriate slot
@@ -106,7 +111,10 @@ MainWindow::MainWindow(QWidget *parent)
     connect(m_plus, SIGNAL(clicked()), this, SLOT(handle_m_boutton()));
     connect(m_diviser, SIGNAL(clicked()), this, SLOT(handle_m_boutton()));
     connect(m_egal, SIGNAL(clicked()), this, SLOT(handle_m_boutton()));
+
     QObject::connect(m_boutton, SIGNAL(clicked()), qApp, SLOT(quit()));
+
+
 
     m_screen = new QLCDNumber(this);
     m_screen->setFrameStyle(QFrame::Panel | QFrame::Sunken);
@@ -123,6 +131,7 @@ MainWindow::~MainWindow()
     
 }
 
+
 void MainWindow::handle_m_boutton()
 {
     QPushButton *button = (QPushButton *)sender();
@@ -131,6 +140,8 @@ void MainWindow::handle_m_boutton()
     bool ok;
     float fbuffer1 = buffer1.toFloat(&ok);
     float fbuffer2 = buffer2.toFloat(&ok);
+
+
 
     if(isOperator(txtButton))
     {
@@ -155,6 +166,8 @@ void MainWindow::handle_m_boutton()
         {
             txtButton="";
         }
+
+
 
         bufferop=txtButton;
         buffer2 = "";

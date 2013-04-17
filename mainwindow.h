@@ -50,6 +50,7 @@ private :
     QPushButton *m_moins;
     QPushButton *m_diviser;
     QPushButton *m_egal;
+    QPushButton *m_retour;
 
     //
     bool isOperator(QString);
